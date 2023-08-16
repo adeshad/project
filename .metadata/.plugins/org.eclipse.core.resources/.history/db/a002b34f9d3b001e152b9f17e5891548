@@ -1,0 +1,43 @@
+package com.app.entities;
+
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Table;
+
+
+import com.app.category.Category;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+@NoArgsConstructor
+@Setter
+@Getter
+@Entity
+@Table(name="Products")
+public class Products extends BaseEntity {
+
+	
+	private String Name;
+	@Column(unique=true)
+	private String productCode;
+	private LocalDate dateOfManu;
+	@Enumerated (EnumType.STRING)
+	private Category category;
+	
+	public Products(String name, String productCode, LocalDate dateOfManu, Category category) {
+		super();
+		Name = name;
+		this.productCode = productCode;
+		this.dateOfManu = dateOfManu;
+		this.category = category;
+	}
+		
+	
+}

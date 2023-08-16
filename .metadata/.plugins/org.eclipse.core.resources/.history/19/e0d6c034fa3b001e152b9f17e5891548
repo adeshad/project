@@ -1,0 +1,38 @@
+package com.app.service;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.app.entities.Hotel;
+import com.app.repository.HotelRepository;
+
+@Service
+@Transactional
+public class HotelServiceImp implements HotelService {
+
+	@Autowired
+	private HotelRepository repo;
+	
+	
+	@Override
+	public String addHotel(Hotel hotel) {
+		Hotel h=repo.save(hotel);
+		if(h!=null)
+		{
+			return "success";
+		}
+		return "failed";
+	}
+
+
+	@Override
+	public List<Hotel> list() {
+		// TODO Auto-generated method stub
+		return repo.findAll();
+	}
+
+}

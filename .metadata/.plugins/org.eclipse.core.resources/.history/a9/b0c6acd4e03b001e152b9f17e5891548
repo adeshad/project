@@ -1,0 +1,48 @@
+package com.app.entities;
+
+import javax.persistence.Embeddable;
+
+@Embeddable
+public class Room {
+
+	private int RoomId;
+	private RoomType roomType;
+	private String roomDesc;
+	
+	public Room(int roomId, RoomType roomType, String roomDesc) {
+		super();
+		RoomId = roomId;
+		this.roomType = roomType;
+		this.roomDesc = roomDesc;
+	}
+	
+	
+	
+	public int getRoomId() {
+		return RoomId;
+	}
+	public void setRoomId(int roomId) {
+		RoomId = roomId;
+	}
+	public RoomType getRoomType() {
+		return roomType;
+	}
+	public void setRoomType(RoomType roomType) {
+		this.roomType = roomType;
+	}
+	public String getRoomDesc() {
+		return roomDesc;
+	}
+	public void setRoomDesc(String roomDesc) {
+		this.roomDesc = roomDesc;
+	}
+	@Override
+	public String toString() {
+		return "Room [RoomId=" + RoomId + ", roomType=" + roomType + ", roomDesc=" + roomDesc + "]";
+	} 
+
+	
+	
+	
+	
+}

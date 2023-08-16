@@ -1,0 +1,24 @@
+package com.app.repository;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.app.entities.Hotel;
+import com.app.service.HotelService;
+
+public class HotelServiceImp implements HotelService {
+
+	@Autowired
+	private HotelRepository repo;
+	
+	
+	@Override
+	public String addHotel(Hotel hotel) {
+		Hotel h=repo.save(hotel);
+		if(h!=null)
+		{
+			return "success";
+		}
+		return "failed";
+	}
+
+}

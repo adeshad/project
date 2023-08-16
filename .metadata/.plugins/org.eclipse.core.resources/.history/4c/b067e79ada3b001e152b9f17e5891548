@@ -1,0 +1,59 @@
+package com.app.entities;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Table;
+
+
+
+
+
+
+
+@Entity
+@Table(name = "Hotels")
+
+public class Hotel {
+
+	@Column(name = "Hotel_Name")
+	private String hotelName;
+	@Column(name = "Contact_Number")
+	private String contactNumber;
+	@Column(name = "Desc_Hotel")
+	private String descHotel;
+	@Enumerated(EnumType.STRING)
+	private HostelType type;
+	//@Enumerated(EnumType.STRING)
+	//private HostelFacilities fun;
+	@Column(name = "Facilies_list")
+	private String facilities;
+	@Column(name = "Base_Price")
+	private double basePrice;
+	
+	@Embedded
+	private Room room;
+
+	public Hotel(String hotelName, String contactNumber, String descHotel, HostelType type, String facilities,
+			double basePrice, Room room) {
+		super();
+		this.hotelName = hotelName;
+		this.contactNumber = contactNumber;
+		this.descHotel = descHotel;
+		this.type = type;
+		this.facilities = facilities;
+		this.basePrice = basePrice;
+		this.room = room;
+	}
+	
+	
+	
+	
+	
+
+}

@@ -1,0 +1,44 @@
+package com.app.entities;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+
+@Entity
+@Table(name = "Hotels")
+
+public class Hotel {
+
+	@Column(name = "Hotel_Name")
+	private String hotelName;
+	@Column(name = "Contact_Number")
+	private String contactNumber;
+	@Column(name = "Desc_Hotel")
+	private String descHotel;
+	@Enumerated(EnumType.STRING)
+	private HostelType type;
+	//@Enumerated(EnumType.STRING)
+	//private HostelFacilities fun;
+	@Column(name = "Facilies_list")
+	private String facilities;
+	@Column(name = "Base_Price")
+	private double basePrice;
+	
+	
+
+}

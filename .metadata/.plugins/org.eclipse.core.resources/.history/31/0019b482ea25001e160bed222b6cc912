@@ -1,0 +1,90 @@
+package linkedlist;
+
+	class Node {
+	    int data;
+	    Node next;
+
+	    public Node(int data) {
+	        this.data = data;
+	        this.next = null;
+	    }
+	}
+
+	public class SinglyLinkedList {
+	
+	    private Node head;
+
+	 public SinglyLinkedList() {
+	        this.head = null;
+	    }
+
+	    public void addElementAtPosition1(int data) {
+	        Node newNode = new Node(data);
+	        if (head == null) {
+	            head = newNode;
+	        } else {
+	            newNode.next = head;
+	            head = newNode;
+	        }
+	    }
+
+	    public void removeAll() {
+	        head = null;
+	    }
+
+	    public int getSumOfElements() {
+	        int sum = 0;
+	        Node current = head;
+	        while (current != null) {
+	            sum += current.data;
+	            current = current.next;
+	        }
+	        return sum;    }
+
+	    public void printReverseOrder() {
+	        printReverse(head);
+	    }
+
+	    private void printReverse(Node node) {
+	        if (node == null) {
+	            return;
+	        }
+	        printReverse(node.next);
+	        System.out.print(node.data + " ");
+	    }
+	
+
+	
+	    public static void main(String[] args) {
+	        SinglyLinkedList list = new SinglyLinkedList();
+
+	        // Adding elements at position 1
+	        list.addElementAtPosition1(10);
+	        list.addElementAtPosition1(20);
+	        list.addElementAtPosition1(30);
+
+	        //Printing the list in reverse order
+	        System.out.println("List in reverse order:");
+	        list.printReverseOrder();
+	        System.out.println();
+
+	        //Removing all elements
+	        list.removeAll();
+
+	        // Adding more elements
+	        list.addElementAtPosition1(40);
+	        list.addElementAtPosition1(50);
+	        list.addElementAtPosition1(60);
+
+	        // Printing the list in reverse order
+	        System.out.println("List in reverse order:");
+	        list.printReverseOrder();
+	        System.out.println();
+
+	        // Getting the sum of all elements
+	        int sum = list.getSumOfElements();
+	        System.out.println("Sum of all elements:" + sum);
+	    }
+	}
+
+

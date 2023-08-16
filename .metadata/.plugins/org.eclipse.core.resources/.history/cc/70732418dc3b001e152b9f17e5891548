@@ -1,0 +1,9 @@
+package com.app.service;
+
+import com.app.entities.Hotel;
+
+public interface HotelService {
+
+	public String addHotel(Hotel hotel);
+	
+}

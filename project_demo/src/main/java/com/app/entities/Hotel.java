@@ -16,6 +16,7 @@ import lombok.NoArgsConstructor;
 public class Hotel extends BaseEntity{
 
 	@Column(name = "Hotel_Name")
+	
 	private String hotelName;
 	@Column(name = "Contact_Number")
 	private String contactNumber;

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="day18_boot_example"/>
+<aop-project name="spring_boot_admission"/>
+<aop-project name="day19_boot_security"/>
+<aop-project name="day17_boot"/>
+<aop-project name="spring_mvc_template"/>
+<aop-project name="project_demo"/>
+<aop-project name="test_security"/>
+<aop-project name="day16.2"/>
+<aop-project name="day15.3"/>
+<aop-project name="spring_boot_template"/>
+<aop-project name="test_spring"/>
+</aop-reference-model>
